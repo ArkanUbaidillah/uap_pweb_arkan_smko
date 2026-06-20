@@ -169,13 +169,4 @@ N2411537001_ArkanUbaidillahWarman_GradingController
 N2411537001_ArkanUbaidillahWarman_UserController
 ```
 
-## Urutan Demo Video Disarankan
 
-1. Perkenalan project SMKO dan role.
-2. Tunjukkan migration dan seeder.
-3. Tunjukkan model dan relationship.
-4. Tunjukkan middleware `CheckRole`.
-5. Tunjukkan route group admin/guru/siswa.
-6. Demo login admin, guru, siswa.
-7. Demo hak akses berbeda tiap role.
-8. Tunjukkan fitur bonus: pagination, search/filter, flash message.
