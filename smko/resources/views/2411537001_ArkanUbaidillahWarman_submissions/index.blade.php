@@ -1,0 +1,6 @@
+@extends('layouts.app')
+@section('title','Daftar Submission')
+@section('content')
+@php($role=auth()->user()->role)
+<div class="card"><div class="table-responsive"><table class="table table-hover mb-0"><tr><th>Siswa</th><th>Tugas</th><th>Kursus</th><th>File/Link</th><th>Waktu</th><th>Nilai</th><th>Aksi</th></tr>@forelse($submissions as $submission)<tr><td>{{ $submission->student->name }}</td><td>{{ $submission->assignment->title }}</td><td>{{ $submission->assignment->course->name }}</td><td>{{ $submission->file_path }}</td><td>{{ optional($submission->submitted_at)->format('d/m/Y H:i') }}</td><td>{{ $submission->score ?? 'Belum dinilai' }}</td><td class="d-flex gap-1"><a class="btn btn-sm btn-info" href="{{ route($role.'.submissions.show',$submission) }}">Detail</a>@if(in_array($role,['admin','guru']))<a class="btn btn-sm btn-warning" href="{{ route($role.'.grades.edit',$submission) }}">Nilai</a>@endif @if($role==='siswa')<form method="POST" action="{{ route('siswa.submissions.destroy',$submission) }}" onsubmit="return confirm('Hapus submission?')">@csrf @method('DELETE')<button class="btn btn-sm btn-danger">Hapus</button></form>@endif</td></tr>@empty<tr><td colspan="7" class="text-center">Belum ada submission.</td></tr>@endforelse</table></div></div><div class="mt-3">{{ $submissions->links() }}</div>
+@endsection

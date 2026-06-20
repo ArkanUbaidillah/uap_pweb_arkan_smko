@@ -1,0 +1,6 @@
+<?php $__env->startSection('title','Detail Submission'); ?>
+<?php $__env->startSection('content'); ?>
+<div class="card"><div class="card-body"><h4><?php echo e($submission->assignment->title); ?></h4><p><strong>Kursus:</strong> <?php echo e($submission->assignment->course->name); ?></p><p><strong>Siswa:</strong> <?php echo e($submission->student->name); ?></p><p><strong>File/Link:</strong> <?php echo e($submission->file_path); ?></p><p><strong>Dikumpulkan:</strong> <?php echo e(optional($submission->submitted_at)->format('d/m/Y H:i')); ?></p><p><strong>Nilai:</strong> <span class="badge bg-<?php echo e($submission->score === null ? 'secondary' : 'success'); ?>"><?php echo e($submission->score ?? 'Belum dinilai'); ?></span></p></div></div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Folder Baru (2)\htdocs\2411537001_ArkanUbaidillahWarman_SMKO_Laravel\smko\resources\views/2411537001_ArkanUbaidillahWarman_submissions/show.blade.php ENDPATH**/ ?>

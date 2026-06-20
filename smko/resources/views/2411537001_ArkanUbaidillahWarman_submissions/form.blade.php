@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title','Kumpul Tugas')
+@section('content')
+<div class="card"><div class="card-body"><h5>{{ $assignment->title }}</h5><p>Kursus: {{ $assignment->course->name }} | Deadline: {{ $assignment->due_date->format('d/m/Y') }}</p><form method="POST" action="{{ route('siswa.submissions.store') }}" enctype="multipart/form-data">@csrf<input type="hidden" name="assignment_id" value="{{ $assignment->id }}"><div class="mb-3"><label>Upload File (opsional)</label><input type="file" name="file" class="form-control"><div class="form-text">PDF/DOC/DOCX/ZIP/RAR/Gambar maksimal 4MB.</div></div><div class="mb-3"><label>Atau isi link/path tugas</label><input name="file_path" value="{{ old('file_path',$submission->file_path) }}" class="form-control" placeholder="Contoh: https://drive.google.com/... atau nama file"></div><button class="btn btn-primary">Kumpulkan</button><a class="btn btn-secondary" href="{{ route('siswa.courses.show',$assignment->course) }}">Kembali</a></form></div></div>
+@endsection

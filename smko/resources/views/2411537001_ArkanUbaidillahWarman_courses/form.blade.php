@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', $course->exists ? 'Edit Kursus' : 'Tambah Kursus')
+@section('content')
+<div class="card"><div class="card-body"><form method="POST" action="{{ $action }}">@csrf @if($method==='PUT') @method('PUT') @endif @if(auth()->user()->role==='admin')<div class="mb-3"><label>Guru Pengampu</label><select name="teacher_id" class="form-select">@foreach($teachers as $teacher)<option value="{{ $teacher->id }}" @selected(old('teacher_id',$course->teacher_id)==$teacher->id)>{{ $teacher->name }}</option>@endforeach</select></div>@endif<div class="mb-3"><label>Nama Kursus</label><input name="name" value="{{ old('name',$course->name) }}" class="form-control" required></div><div class="mb-3"><label>Kode Unik</label><input name="code" value="{{ old('code',$course->code) }}" class="form-control" required></div><div class="mb-3"><label>Deskripsi</label><textarea name="description" class="form-control" rows="4">{{ old('description',$course->description) }}</textarea></div><button class="btn btn-primary">Simpan</button><a href="{{ route(auth()->user()->role.'.courses.index') }}" class="btn btn-secondary">Kembali</a></form></div></div>
+@endsection

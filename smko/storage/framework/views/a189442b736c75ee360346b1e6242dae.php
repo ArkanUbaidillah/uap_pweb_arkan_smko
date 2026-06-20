@@ -1,0 +1,6 @@
+<?php $__env->startSection('title','Detail Tugas'); ?>
+<?php $__env->startSection('content'); ?>
+<div class="card mb-3"><div class="card-body"><h4><?php echo e($assignment->title); ?></h4><p>Kursus: <strong><?php echo e($assignment->course->name); ?></strong> | Deadline: <?php echo e($assignment->due_date->format('d/m/Y')); ?></p><p><?php echo e($assignment->description); ?></p></div></div><div class="card"><div class="card-header">Submission</div><table class="table mb-0"><tr><th>Siswa</th><th>Waktu</th><th>Nilai</th></tr><?php $__currentLoopData = $assignment->submissions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><tr><td><?php echo e($s->student->name); ?></td><td><?php echo e(optional($s->submitted_at)->format('d/m/Y H:i')); ?></td><td><?php echo e($s->score ?? 'Belum dinilai'); ?></td></tr><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?></table></div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Folder Baru (2)\htdocs\2411537001_ArkanUbaidillahWarman_SMKO_Laravel\smko\resources\views/2411537001_ArkanUbaidillahWarman_assignments/show.blade.php ENDPATH**/ ?>

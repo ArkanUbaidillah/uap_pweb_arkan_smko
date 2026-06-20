@@ -1,0 +1,6 @@
+<?php $__env->startSection('title','Input/Edit Nilai'); ?>
+<?php $__env->startSection('content'); ?>
+<div class="card"><div class="card-body"><p>Siswa: <strong><?php echo e($submission->student->name); ?></strong></p><p>Tugas: <strong><?php echo e($submission->assignment->title); ?></strong> - <?php echo e($submission->assignment->course->name); ?></p><p>File/Link: <?php echo e($submission->file_path); ?></p><form method="POST" action="<?php echo e($action); ?>"><?php echo csrf_field(); ?> <?php echo method_field('PUT'); ?><div class="mb-3"><label>Nilai 0-100</label><input type="number" name="score" min="0" max="100" value="<?php echo e(old('score',$submission->score)); ?>" class="form-control" required></div><button class="btn btn-primary">Simpan Nilai</button><a href="<?php echo e(route(auth()->user()->role.'.grades.index')); ?>" class="btn btn-secondary">Kembali</a></form></div></div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Folder Baru (2)\htdocs\2411537001_ArkanUbaidillahWarman_SMKO_Laravel\smko\resources\views/2411537001_ArkanUbaidillahWarman_submissions/grade-form.blade.php ENDPATH**/ ?>

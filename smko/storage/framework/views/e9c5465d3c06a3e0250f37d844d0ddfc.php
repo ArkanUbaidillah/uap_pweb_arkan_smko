@@ -1,0 +1,6 @@
+<?php $__env->startSection('title','Register Siswa'); ?>
+<?php $__env->startSection('content'); ?>
+<div class="row justify-content-center mt-5"><div class="col-md-5"><div class="card"><div class="card-body p-4"><h4 class="mb-3">Register Siswa</h4><form method="POST" action="/register"><?php echo csrf_field(); ?><div class="mb-3"><label>Nama</label><input name="name" value="<?php echo e(old('name')); ?>" class="form-control" required></div><div class="mb-3"><label>Email</label><input type="email" name="email" value="<?php echo e(old('email')); ?>" class="form-control" required></div><div class="mb-3"><label>Password</label><input type="password" name="password" class="form-control" required></div><div class="mb-3"><label>Konfirmasi Password</label><input type="password" name="password_confirmation" class="form-control" required></div><button class="btn btn-primary w-100">Register</button></form><hr><a href="/login">Sudah punya akun?</a></div></div></div></div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\Folder Baru (2)\htdocs\2411537001_ArkanUbaidillahWarman_SMKO_Laravel\smko\resources\views/auth/register.blade.php ENDPATH**/ ?>

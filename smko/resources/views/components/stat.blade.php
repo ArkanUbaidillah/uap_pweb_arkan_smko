@@ -1,0 +1,1 @@
+<div class="col-md-3"><div class="card border-start border-{{ $color }} border-4"><div class="card-body"><div class="text-muted small">{{ $title }}</div><div class="h3 mb-0">{{ $value }}</div></div></div></div>

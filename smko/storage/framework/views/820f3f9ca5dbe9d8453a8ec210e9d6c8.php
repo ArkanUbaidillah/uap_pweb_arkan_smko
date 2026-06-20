@@ -1,0 +1,2 @@
+<div class="col-md-3"><div class="card border-start border-<?php echo e($color); ?> border-4"><div class="card-body"><div class="text-muted small"><?php echo e($title); ?></div><div class="h3 mb-0"><?php echo e($value); ?></div></div></div></div>
+<?php /**PATH C:\Folder Baru (2)\htdocs\2411537001_ArkanUbaidillahWarman_SMKO_Laravel\smko\resources\views/components/stat.blade.php ENDPATH**/ ?>
